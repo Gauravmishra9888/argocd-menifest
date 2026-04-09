@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-todo-delete-tasks-api
+spec:
+  replicas: {{ .Values.deltask.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-todo-delete-tasks-api
+  template:
+    metadata:
+      name: {{ .Release.Name }}-todo-delete-tasks
+      labels:
+        app: {{ .Release.Name }}-todo-delete-tasks-api
+    spec:
+      containers:
+       - name: {{ .Release.Name }}-todo-delete-tasks-api
+         image: {{ .Values.common.acrname }}/{{ .Values.deltask.image.imagename }}:{{ .Values.deltask.image.version }}
+         ports:
+          - containerPort: {{ .Values.deltask.ports.containerPort }}
+         env: 
+        - name: {{ .Values.commom.DBconnectionstring.name }}
+          value: {{ .Values.common.DBconnectionstring.value }}

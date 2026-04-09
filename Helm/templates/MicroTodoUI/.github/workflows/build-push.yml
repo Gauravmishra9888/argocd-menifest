@@ -1,7 +1,9 @@
 name: Build and Push to ACR
 
+
 on:
   workflow_dispatch:  # Isse tum manually GitHub se trigger kar sakte ho
+
 
 
 permissions:
@@ -14,9 +16,9 @@ jobs:
 
     env:
       IMAGE_NAME: micro-todo-ui-api
-      IMAGE_TAG: v2
-      ACR_NAME: acrdevtodoproject0409
-      ACR_LOGIN_SERVER: acrdevtodoproject0409.azurecr.io
+      IMAGE_TAG: v10
+      ACR_NAME: acr028
+      ACR_LOGIN_SERVER: acr028.azurecr.io
 
     steps:
       - name: Checkout code
@@ -25,9 +27,9 @@ jobs:
       - name: Azure Login
         uses: Azure/login@v2.3.0
         with:
-          client-id: cf260616-bfcf-4178-be05-5a9886b2caa3
-          tenant-id: 65bc8c39-1242-4747-b237-239c15b77fed
-          subscription-id: db32f9ec-acc7-4507-90c8-6c0798ff4278
+          client-id: b0151d1f-06be-43a6-9869-0ceef94ce1a5
+          tenant-id: 57464fa0-05a4-4855-a9af-e5be611b8553
+          subscription-id: 635e9286-14d1-435f-b7e1-af1ebf689f4e
 
       - name: Log in to ACR
         run: |

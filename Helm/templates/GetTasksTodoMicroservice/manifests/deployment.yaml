@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-todo-get-task-api
+spec:
+  replicas: {{ .Values.gettask.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-todo-get-task-api
+  template:
+    metadata:
+      name: {{ .Release.Name }}-todo-get-task
+      labels:
+        app: {{ .Release.Name }}-todo-get-task-api
+    spec:
+      containers:
+      - name: {{ .Release.Name }}-todo-get-task-api
+        image: {{ .Values.commomn.acrname }}/{{ .Values.gettask.imagename }}:{{ .Values.gettask.version }}
+        ports:
+        - containerPort: {{ .Values.commomn.ports.containerPort }}
+        env: 
+        - name: {{ .Values.commom.DBconnectionstring.name }}
+          value: {{ .Values.common.DBconnectionstring.value }}
+
