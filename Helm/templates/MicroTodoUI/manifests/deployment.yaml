@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}-todo-ui
 spec:
-  replicas: {{ .values.todoUI.replicas }}
+  replicas: {{ .Values.todoUI.replicas }}
   selector:
     matchLabels:
       app: {{ .Release.Name }}-todo-ui
