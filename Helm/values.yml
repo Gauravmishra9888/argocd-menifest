@@ -23,7 +23,7 @@ addtask:
 todoUI:
     replicas: 5
     imagename: micro-todo-ui-api
-    version: v1
+    version: v2
     containerPort: 80
     type: ClusterIP
     port: 80
