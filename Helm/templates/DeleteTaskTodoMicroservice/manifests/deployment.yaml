@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
        - name: {{ .Release.Name }}-todo-delete-tasks-api
-         image: {{ .Values.common.acrname }}/{{ .Values.deltask.image.imagename }}:{{ .Values.deltask.image.version }}
+         image: {{ .Values.common.acrname }}/{{ .Values.deltask.imagename }}:{{ .Values.deltask.version }}
          ports:
-          - containerPort: {{ .Values.deltask.ports.containerPort }}
+          - containerPort: {{ .Values.deltask.containerPort }}
          env: 
         - name: {{ .Values.commom.DBconnectionstring.name }}
           value: {{ .Values.common.DBconnectionstring.value }}

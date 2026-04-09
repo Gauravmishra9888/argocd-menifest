@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: {{ .Realease.name }}-todo-add-tasks-api
-        image: {{ .Values.commom.acrname }}/{{ .Values.addtask.image.imagename }}:{{ .Values.addtask.image.version }}
+        image: {{ .Values.commom.acrname }}/{{ .Values.addtask.imagename }}:{{ .Values.addtask.version }}
         ports:
         - containerPort: {{ .Values.addtask.containerPort }}
         env: 

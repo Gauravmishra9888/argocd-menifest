@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
       - name: {{ .Release.Name }}-todo-get-task-api
-        image: {{ .Values.commomn.acrname }}/{{ .Values.gettask.imagename }}:{{ .Values.gettask.version }}
+        image: {{ .Values.common.acrname }}/{{ .Values.gettask.imagename }}:{{ .Values.gettask.version }}
         ports:
-        - containerPort: {{ .Values.commomn.ports.containerPort }}
+        - containerPort: {{ .Values.gettask.containerPort }}
         env: 
         - name: {{ .Values.commom.DBconnectionstring.name }}
           value: {{ .Values.common.DBconnectionstring.value }}
