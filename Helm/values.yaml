@@ -24,7 +24,7 @@ todoUI:
     replicas: 5
     imagename: micro-todo-ui-api
     version: v2
-    containerPort: 80
+    containerPort: 8000
     type: ClusterIP
     port: 80
     targetPort: 8000

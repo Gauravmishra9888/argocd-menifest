@@ -17,4 +17,4 @@ spec:
       - name: {{ .Release.Name }}-todo-ui
         image: {{ .Values.common.acrname }}/{{ .Values.todoUI.imagename }}:{{ .Values.todoUI.version }}
         ports:
-        - containerPort: {{ .Values.todoUI.containerPort }}
+        - containerPort: {{ .Values.todoUI.ports.containerPort }}
